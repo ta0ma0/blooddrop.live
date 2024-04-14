@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Главная страница
+{% endblock %}
+
+{% block content %}
+    <h1><span class="glyphicon glyphicon-heart" style="color: red;"> Blood</span> donation in Gyumri</h1>
+    <p>В сентябре 2023 года, я увидел <a href="https://meduza.io/feature/2023/09/21/bezhentsam-iz-karabaha-i-lyudyam-kotorye-postradali-ot-obstrelov-nuzhna-pomoscha">новости</a>
+         о том что беженцам из Карабаха и людям, которые пострадали от обстрелов нужна помощь</p>
+         <p>Я заполнил анкету дона фонда VIVA и пришел в банк крови. Уже полгода я продолжаю ходить туда каждые два месяца.</p>
+         <p>Вы тоже можете стать донором или помочь опосредованно.</p>
+         <br>
+         <p><a href="https://viva.foundation/donorstvo-krovi/">Фонд VIVA</a> анкета донора</p>
+         <br>
+         <a href="https://boosty.to/blooddrop.live/donate">Поддержать проект на boosty</a>
+         <br>
+         <br>
+         <span>BTC: 1LchJQexvFigtqRK4tWeCCEvLdKDi1RnFk</span>&nbsp
+         <button id="copy-button" data-bs-toggle="tooltip" data-bs-placement="top" title="Скопировать в буфер">
+            &#x2398;
+        </button>
+
+    <script>
+        const copyButton = document.getElementById('copy-button');
+const textToCopy = '1LchJQexvFigtqRK4tWeCCEvLdKDi1RnFk'; // Или возьмите текст из элемента
+
+copyButton.addEventListener('click', () => {
+    navigator.clipboard.writeText(textToCopy)
+        .then(() => {
+            // Успешно скопировано
+            copyButton.setAttribute('title', 'Скопировано!');
+        })
+        .catch(error => {
+            // Ошибка копирования
+            console.error('Ошибка при копировании:', error);
+        });
+});
+    </script>
+        
+{% endblock %}
